@@ -1,6 +1,8 @@
+'use client'
 import { skills, tools } from "@/constant";
 import { motion } from "motion/react";
 import Image from "next/image";
+import BrushStroke from "./BrushStroke";
 
 function Skills() {
   return (
@@ -27,6 +29,7 @@ function Skills() {
           </div>
           <div className="flex flex-wrap gap-5.5">
             {skills.map((skill, index) => (
+              <BrushStroke className="h-12.5 flex items-center justify-center">
               <motion.span
                 key={skill}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -34,10 +37,11 @@ function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="px-6 py-2.5 bg-[#A5C9D1CC] text-black text-sm font-medium rounded-sm cursor-default transition-shadow hover:shadow-md font-[poppins]"
+                className="px-6 py-2.5 text-black text-sm font-medium rounded-sm cursor-default transition-shadow hover:shadow-md font-[poppins]"
               >
                 {skill}
               </motion.span>
+              </BrushStroke>
             ))}
           </div>
         </motion.div>

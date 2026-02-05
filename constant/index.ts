@@ -66,3 +66,10 @@ export const artworks = [
   { src: "/api/placeholder/300/400", rotate: "rotate-3", torn: false },
   { src: "/api/placeholder/300/400", rotate: "-rotate-1", torn: true },
 ];
+
+export const socials = [
+  { name: "Email", icon: "✉", position: "left-4 top-0" },
+  { name: "LinkedIn", icon: "in", position: "right-4 top-0" },
+  { name: "X", icon: "X", position: "left-8 bottom-20" },
+  { name: "Instagram", icon: "IG", position: "right-8 bottom-16" },
+];

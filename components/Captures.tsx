@@ -1,3 +1,4 @@
+'use client'
 import { motion } from "motion/react"
 import Image from "next/image"
 import LayeredText from "./LayeredText"
@@ -22,7 +23,7 @@ function Captures() {
   }
 
   return (
-    <section className="py-20 max-w-7xl mx-auto px-4">
+    <section className="py-20 max-w-6xl mx-auto px-4">
       <LayeredText 
         mainWord="CAPTURES" 
         insideWord="Captures" 

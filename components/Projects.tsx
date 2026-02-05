@@ -1,8 +1,9 @@
+'use client'
 import { projects } from "@/constant";
 import { motion } from "motion/react"
 import Image from "next/image";
 import LayeredText from "./LayeredText";
-import { CornerDownRight } from "lucide-react";
+import BrushStroke from "./BrushStroke";
 
 function Projects() {
   return (
@@ -55,13 +56,17 @@ function Projects() {
                     </div>
                   ))}
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-3 bg-[#A5C9D1CC] text-black text-sm font-medium rounded-sm shadow-sm hover:shadow-md transition-all ml-6"
-                >
-                  View Case Study
-                </motion.button>
+                <div className="ml-6">
+                  <BrushStroke className="h-12 flex items-center justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-6.5 py-2 text-black text-sm font-medium rounded-sm transition-all"
+                  >
+                    View Case Study
+                  </motion.button>
+                </BrushStroke>
+                </div>
               </div>
 
               {/* Device Mockup */}

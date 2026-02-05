@@ -1,4 +1,4 @@
-import { traits } from "@/constant";
+'use client'
 import { motion } from "motion/react";
 import Image from "next/image";
 import LayeredText from "./LayeredText";

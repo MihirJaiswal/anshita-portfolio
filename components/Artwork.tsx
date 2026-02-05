@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import { motion } from "framer-motion";
 import { artworks } from "@/constant";
@@ -11,34 +12,48 @@ function Artwork() {
           Drawings from my sketchbook, shaped by patience and detail.
         </p>
 
-        <div className="columns-2 md:columns-3 gap-6 space-y-6">
-          {artworks.map((artwork, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className={`relative break-inside-avoid ${artwork.rotate} ${artwork.torn ? "before:absolute before:inset-0 before:bg-white before:z-0 before:shadow-lg" : ""}`}
-            >
-              <div
-                className={`relative overflow-hidden ${artwork.torn ? "p-2 bg-white shadow-xl" : "rounded-sm shadow-md"}`}
-              >
-                {artwork.torn && (
-                  <div className="absolute top-0 left-0 right-0 h-4 bg-[linear-gradient(45deg,transparent_33.333%,#fff_33.333%,#fff_66.667%,transparent_66.667%)] bg-[length:8px_16px] z-10" />
-                )}
-                <div className="relative aspect-[3/4]">
-                  <Image
-                    src={artwork.src}
-                    alt={`Artwork ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        <div className="flex items-center justify-center gap-9">
+          <div className="flex flex-col">
+            <Image
+              src='/assets/artwork/art3.png'
+              alt="Artwork 1"  
+              width={500}
+              height={700}
+              className="mb-6 rounded-lg object-cover"
+            />
+            <Image
+              src='/assets/artwork/art1.png'
+              alt="Artwork 2" 
+              width={500}
+              height={700}
+              className="rounded-lg object-cover"
+            />
+          </div>
+          <div className="flex items-center justify-center h-full">
+            <Image
+              src='/assets/artwork/art4.png'
+              alt="Artwork 1"  
+              width={580}
+              height={700}
+              className="mb-6 rounded-lg object-cover"
+            />
+          </div>
+          <div>
+            <Image
+              src='/assets/artwork/art.png'
+              alt="Artwork 1"  
+              width={500}
+              height={700}
+              className="mb-6 rounded-lg object-cover"
+            />
+            <Image
+              src='/assets/artwork/art2.png'
+              alt="Artwork 2" 
+              width={500}
+              height={700}
+              className="rounded-lg object-cover"
+            />
+          </div>
         </div>
       </section>
   )
