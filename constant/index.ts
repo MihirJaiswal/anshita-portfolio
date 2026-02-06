@@ -31,7 +31,6 @@ export const projects = [
       "The project focuses on identifying pain points in playlist ordering and visibility, and proposes design solutions that help users find relevant music more easily without changing their listening habits.",
     ],
     image: "/api/placeholder/400/400",
-    device: "mobile",
     reverse: false,
   },
   {
@@ -41,8 +40,7 @@ export const projects = [
       "A concept website for a bakery brand, focused on creating a warm visual identity and a welcoming digital experience.",
       "The project explores brand tone, color harmony, and layout decisions to reflect the feel of a physical bakery while keeping the interface simple and easy to navigate.",
     ],
-    image: "/api/placeholder/500/350",
-    device: "laptop",
+    image: "/assets/projects/bakery.png",
     reverse: true,
   },
 ];

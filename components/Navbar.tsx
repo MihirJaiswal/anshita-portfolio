@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import BrushStroke from "./BrushStroke";
+import Signature from "./signature/Signature";
 
 function Navbar() {
   return (
@@ -13,11 +14,9 @@ function Navbar() {
       >
         <div className="flex justify-between items-center max-w-5xl mx-auto px-8">
           {/* Logo */}
-        <div className="shrink-0">
-          <a href="#home" className="text-2xl font-serif italic text-black">
-            AnnHi
-          </a>
-        </div>
+        {/* <div className="w-12">
+          <Signature/>
+        </div> */}
 
         {/* Navigation Links */}
         <div className="flex gap-16 text-sm tracking-wide text-gray-800">

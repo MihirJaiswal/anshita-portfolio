@@ -6,7 +6,7 @@ import LayeredText from "./LayeredText";
 
 function Artwork() {
   return (
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
         <LayeredText mainWord="ARTWORK" insideWord="Artwork" mainClassName="!text-[200px] -my-4 sm:-my-8 md:-my-16" insideClassName="!text-[64px]" />
         <p className="text-center text-[20px] mb-12">
           Drawings from my sketchbook, shaped by patience and detail.

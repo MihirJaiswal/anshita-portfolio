@@ -38,7 +38,8 @@ function Projects() {
                     className="h-20 w-full object-contain my-4"
                   />
                 </div>
-              <div className={project.reverse ? "md:col-start-2" : ""}>         
+              <div className="flex items-center justify-between">
+                <div className={`max-w-lg ${project.reverse} ? "md:col-start-2" : ""`}>         
                 <div className="space-y-4 mb-6">
                   {project.description.map((desc, i) => (
                     <div
@@ -68,63 +69,16 @@ function Projects() {
                 </BrushStroke>
                 </div>
               </div>
-
-              {/* Device Mockup */}
-              {/* <div
-                className={`relative ${project.reverse ? "md:col-start-1" : ""}`}
-              >
-                {project.device === "mobile" ? (
-                  <div className="flex justify-center gap-4">
-                    <motion.div
-                      whileHover={{ y: -10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="relative w-40 h-80 bg-black rounded-[3rem] p-2 shadow-2xl border-4 border-gray-800"
-                    >
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-black rounded-b-xl z-10" />
-                      <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ y: -10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="relative w-40 h-80 bg-black rounded-[3rem] p-2 shadow-2xl border-4 border-gray-800 mt-8"
-                    >
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-black rounded-b-xl z-10" />
-                      <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
-                        <div className="absolute inset-0 bg-green-500 flex items-center justify-center">
-                          <span className="text-white text-4xl">🎵</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                ) : (
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="relative mx-auto w-full max-w-lg"
-                  >
-                    <div className="relative bg-gray-800 rounded-t-xl p-4 pt-2 shadow-2xl">
-                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-600 rounded-full" />
-                      <div className="mt-4 bg-white rounded-lg overflow-hidden aspect-16/10 relative">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="h-4 bg-gray-700 rounded-b-lg mx-4" />
-                    <div className="h-2 bg-gray-600 rounded-b-lg mx-8" />
-                  </motion.div>
-                )}
-              </div> */}
+              <div>
+                <Image
+                 src={project.image}
+                 alt={project.title}
+                 height={500}
+                 width={500}
+                 className="w-full object-cover h-76"
+                 />
+              </div>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -24,7 +24,80 @@ function Connect() {
           alt="anshita"
           height={260}
           width={400}
+          className="relative"
         />
+        <div className="absolute top-[20%] left-[13.5%]">
+          <Image
+            src="/assets/connect/line1.svg"
+            alt="line 1"
+            width={119}
+            height={64}
+            className="relative z-10 w-47 h-40 object-contain"
+          />
+          <div className="absolute top-[-38%] -left-[40%] text-[32px] z-20">
+            <Image
+             src='/assets/connect/mail.png'
+             alt=""
+             width={110}
+             height={110}
+             unoptimized
+             />
+          </div>
+        </div>
+        <div className="absolute bottom-[36%] left-[6%]">
+          <Image
+            src="/assets/connect/line2.svg"
+            alt="line 6"
+            width={64}
+            height={85}
+            className="relative z-10 w-50 h-16 object-contain"
+          />
+          <div className="absolute top-[0%] -left-[40%] text-[32px] z-20">
+            <Image
+             src='/assets/connect/x.png'
+             alt=""
+             width={110}
+             height={110}
+             unoptimized
+             />
+          </div>
+        </div>
+        <div className="absolute top-[25%] right-[15%] ">
+          <Image
+            src="/assets/connect/line3.svg"
+            alt="line 5"
+            width={131}
+            height={48}
+            className="relative z-10 w-40 h-34 object-contain"
+          />
+          <div className="absolute top-[-65%] -right-[62%] text-[32px] z-20">
+            <Image
+             src='/assets/connect/linkedin.png'
+             alt=""
+             width={110}
+             height={110}
+             unoptimized
+             />
+          </div>
+        </div>
+        <div className="absolute top-[54%] right-[3.5%]">
+          <Image
+            src="/assets/connect/line4.svg"
+            alt="line 5"
+            width={131}
+            height={48}
+            className="relative z-10 w-60 h-30 object-contain"
+          />
+          <div className="absolute top-[0%] -right-[40%] text-[32px] z-20">
+            <Image
+             src='/assets/connect/instagram.png'
+             alt=""
+             width={110}
+             height={110}
+             unoptimized
+             />
+          </div>
+        </div>
       </div>
     </section>
   );
