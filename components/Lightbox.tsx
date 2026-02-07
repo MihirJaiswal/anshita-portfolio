@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useState, useRef } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
@@ -25,26 +25,25 @@ export default function Lightbox({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [direction, setDirection] = useState(1);
-  const prevIndexRef = useRef(currentIndex);
+
+  const resetZoom = useCallback(() => {
+    setZoom(1);
+    setPosition({ x: 0, y: 0 });
+  }, []);
 
   const handlePrev = useCallback(() => {
     setDirection(-1);
     const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     resetZoom();
     onNavigate(newIndex);
-  }, [currentIndex, images.length, onNavigate]);
+  }, [currentIndex, images.length, onNavigate, resetZoom]);
 
   const handleNext = useCallback(() => {
     setDirection(1);
     const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
     resetZoom();
     onNavigate(newIndex);
-  }, [currentIndex, images.length, onNavigate]);
-
-  const resetZoom = () => {
-    setZoom(1);
-    setPosition({ x: 0, y: 0 });
-  };
+  }, [currentIndex, images.length, onNavigate, resetZoom]);
 
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 0.5, 4));
   const handleZoomOut = () => {
@@ -90,7 +89,7 @@ export default function Lightbox({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [isOpen, onClose, handlePrev, handleNext]);
+  }, [isOpen, onClose, handlePrev, handleNext, resetZoom]);
 
   // Drag to pan when zoomed
   const handleMouseDown = (e: React.MouseEvent) => {

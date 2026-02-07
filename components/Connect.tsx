@@ -28,15 +28,6 @@ const itemVariants = {
   },
 };
 
-const floatAnimation = {
-  y: [-5, 5, -5],
-  transition: {
-    duration: 4,
-    repeat: Infinity,
-    ease: "easeInOut" as const,
-  },
-};
-
 const socialLinks = [
   {
     href: "mailto:anshitarathore25@gmail.com",

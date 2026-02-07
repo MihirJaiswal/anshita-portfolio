@@ -11,7 +11,7 @@ interface BrushStrokeProps {
   scale?: number;
   rounded?: boolean;
   as?: ElementType;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const BrushStroke: React.FC<BrushStrokeProps> = ({

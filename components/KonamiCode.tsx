@@ -22,37 +22,7 @@ export default function KonamiCode() {
   const [isActivated, setIsActivated] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (isActivated) return;
-
-      const newSequence = [...keySequence, e.key];
-      if (newSequence.length > KONAMI_CODE.length) {
-        newSequence.shift();
-      }
-
-      setKeySequence(newSequence);
-
-      if (newSequence.join(",") === KONAMI_CODE.join(",")) {
-        setIsActivated(true);
-        setShowMessage(true);
-        triggerEasterEgg();
-      }
-    },
-    [keySequence, isActivated]
-  );
-
-  const triggerEasterEgg = () => {
-    // Create confetti effect
-    createConfetti();
-
-    // Auto-hide message after 5 seconds
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 5000);
-  };
-
-  const createConfetti = () => {
+  const createConfetti = useCallback(() => {
     const colors = ["#A5C9D1", "#FFD700", "#FF6B6B", "#4ECDC4", "#95E1D3"];
     const confettiCount = 50;
 
@@ -89,7 +59,37 @@ export default function KonamiCode() {
         }
       ).onfinish = () => confetti.remove();
     }
-  };
+  }, []);
+
+  const triggerEasterEgg = useCallback(() => {
+    // Create confetti effect
+    createConfetti();
+
+    // Auto-hide message after 5 seconds
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 5000);
+  }, [createConfetti]);
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (isActivated) return;
+
+      const newSequence = [...keySequence, e.key];
+      if (newSequence.length > KONAMI_CODE.length) {
+        newSequence.shift();
+      }
+
+      setKeySequence(newSequence);
+
+      if (newSequence.join(",") === KONAMI_CODE.join(",")) {
+        setIsActivated(true);
+        setShowMessage(true);
+        triggerEasterEgg();
+      }
+    },
+    [keySequence, isActivated, triggerEasterEgg]
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);

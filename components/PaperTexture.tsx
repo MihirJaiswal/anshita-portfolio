@@ -1,15 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
+
+// Generate static fiber data
+const FIBERS = Array.from({ length: 20 }, (_, i) => ({
+  key: i,
+  x1: (i * 17 + 23) % 100,
+  y1: (i * 31 + 47) % 100,
+  x2: (i * 13 + 71) % 100,
+  y2: (i * 29 + 11) % 100,
+  opacity: 0.3 + ((i * 7) % 5) / 10,
+}));
 
 export default function PaperTexture() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+  const fiberLines = useMemo(() => FIBERS, []);
 
   return (
     <>
@@ -38,16 +42,16 @@ export default function PaperTexture() {
       >
         <defs>
           <pattern id="fibers" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            {Array.from({ length: 20 }).map((_, i) => (
+            {fiberLines.map((fiber) => (
               <line
-                key={i}
-                x1={Math.random() * 100}
-                y1={Math.random() * 100}
-                x2={Math.random() * 100}
-                y2={Math.random() * 100}
+                key={fiber.key}
+                x1={fiber.x1}
+                y1={fiber.y1}
+                x2={fiber.x2}
+                y2={fiber.y2}
                 stroke="currentColor"
                 strokeWidth="0.3"
-                opacity={0.3 + Math.random() * 0.4}
+                opacity={fiber.opacity}
               />
             ))}
           </pattern>

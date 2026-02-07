@@ -28,6 +28,48 @@ const CRAYON_COLORS = [
   { name: "Black", value: "#1A1A1A" },
 ];
 
+// Draw stroke helper function - defined outside component
+const drawStrokeHelper = (
+  ctx: CanvasRenderingContext2D,
+  points: Point[],
+  color: string,
+  width: number
+) => {
+  if (points.length < 2) return;
+
+  ctx.beginPath();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = width;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  // Add slight roughness for crayon effect
+  ctx.shadowBlur = 1;
+  ctx.shadowColor = color;
+
+  ctx.moveTo(points[0].x, points[0].y);
+
+  for (let i = 1; i < points.length; i++) {
+    const prev = points[i - 1];
+    const curr = points[i];
+
+    // Quadratic curve for smoother lines
+    const midX = (prev.x + curr.x) / 2;
+    const midY = (prev.y + curr.y) / 2;
+
+    if (i === 1) {
+      ctx.lineTo(curr.x, curr.y);
+    } else {
+      ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+    }
+  }
+
+  ctx.lineTo(points[points.length - 1].x, points[points.length - 1].y);
+  ctx.stroke();
+
+  ctx.shadowBlur = 0;
+};
+
 export default function DoodleCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,6 +81,34 @@ export default function DoodleCanvas() {
   const [isEraser, setIsEraser] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(true);
+
+  // Redraw all strokes - memoized with useCallback
+  const redrawCanvas = useCallback(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!canvas || !ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw paper texture background
+    ctx.fillStyle = "#FAFAF8";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw all saved strokes
+    strokes.forEach((stroke) => {
+      drawStrokeHelper(ctx, stroke.points, stroke.color, stroke.width);
+    });
+
+    // Draw current stroke
+    if (currentStroke.length > 1) {
+      drawStrokeHelper(
+        ctx,
+        currentStroke,
+        isEraser ? "#FAFAF8" : selectedColor,
+        isEraser ? brushSize * 2 : brushSize
+      );
+    }
+  }, [strokes, currentStroke, selectedColor, brushSize, isEraser]);
 
   // Initialize canvas
   useEffect(() => {
@@ -56,80 +126,11 @@ export default function DoodleCanvas() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
     return () => window.removeEventListener("resize", resizeCanvas);
-  }, []);
-
-  // Redraw all strokes
-  const redrawCanvas = useCallback(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw paper texture background
-    ctx.fillStyle = "#FAFAF8";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw all saved strokes
-    strokes.forEach((stroke) => {
-      drawStroke(ctx, stroke.points, stroke.color, stroke.width);
-    });
-
-    // Draw current stroke
-    if (currentStroke.length > 1) {
-      drawStroke(
-        ctx,
-        currentStroke,
-        isEraser ? "#FAFAF8" : selectedColor,
-        isEraser ? brushSize * 2 : brushSize
-      );
-    }
-  }, [strokes, currentStroke, selectedColor, brushSize, isEraser]);
+  }, [redrawCanvas]);
 
   useEffect(() => {
     redrawCanvas();
   }, [redrawCanvas]);
-
-  const drawStroke = (
-    ctx: CanvasRenderingContext2D,
-    points: Point[],
-    color: string,
-    width: number
-  ) => {
-    if (points.length < 2) return;
-
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-
-    // Add slight roughness for crayon effect
-    ctx.shadowBlur = 1;
-    ctx.shadowColor = color;
-
-    ctx.moveTo(points[0].x, points[0].y);
-
-    for (let i = 1; i < points.length; i++) {
-      const prev = points[i - 1];
-      const curr = points[i];
-
-      // Quadratic curve for smoother lines
-      const midX = (prev.x + curr.x) / 2;
-      const midY = (prev.y + curr.y) / 2;
-
-      if (i === 1) {
-        ctx.lineTo(curr.x, curr.y);
-      } else {
-        ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
-      }
-    }
-
-    ctx.lineTo(points[points.length - 1].x, points[points.length - 1].y);
-    ctx.stroke();
-
-    ctx.shadowBlur = 0;
-  };
 
   const getPoint = (e: React.MouseEvent | React.TouchEvent): Point => {
     const canvas = canvasRef.current;
