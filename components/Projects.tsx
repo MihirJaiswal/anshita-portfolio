@@ -1,9 +1,11 @@
 "use client";
+import Link from "next/link";
 import { projects } from "@/constant";
 import { motion } from "motion/react";
 import Image from "next/image";
 import LayeredText from "./LayeredText";
 import BrushStroke from "./BrushStroke";
+import ShareButton from "./ShareButton";
 
 function Projects() {
   return (
@@ -60,27 +62,31 @@ function Projects() {
                     </div>
                   ))}
                 </div>
-                <div className="ml-0 md:ml-6">
+                <div className="ml-0 md:ml-6 flex items-center gap-4">
                   <BrushStroke className="h-10 md:h-12 flex items-center justify-center w-fit">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="px-5 md:px-6.5 py-2 text-black text-sm font-medium rounded-sm transition-all"
-                    >
-                      View Case Study
-                    </motion.button>
+                    <Link href={`/projects/${project.id}`}>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-5 md:px-6.5 py-2 text-black text-sm font-medium rounded-sm transition-all"
+                      >
+                        View Case Study
+                      </motion.button>
+                    </Link>
                   </BrushStroke>
                 </div>
               </div>
               <div className="w-full lg:w-auto">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  height={500}
-                  width={500}
-                  unoptimized
-                  className="w-full object-cover h-full lg:h-68 pb-8 lg:pb-0"
-                />
+                <Link href={`/projects/${project.id}`}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    height={500}
+                    width={500}
+                    unoptimized
+                    className="w-full object-cover h-full lg:h-68 py-8 lg:py-0 cursor-pointer hover:opacity-95 transition-opacity"
+                  />
+                </Link>
               </div>
             </div>
           </motion.div>

@@ -1,13 +1,24 @@
 "use client";
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import LayeredText from "./LayeredText";
 
 function About() {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+  const textY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
   return (
     <section
+      ref={containerRef}
       id="about"
-      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden"
     >
       <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-12 items-center">
         {/* Image Section with Decorative Text */}
@@ -16,9 +27,10 @@ function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ y: imageY }}
           className="relative flex-1 items-center justify-center md:scale-90"
         >
-          <div className="relative w-79 h-108 mx-auto">
+          <div className="relative w-60 h-84 sm:w-79 sm:h-108 mx-auto">
             <div className="relative w-full h-full z-20">
               <Image
                 src="/assets/anshita-paper.png"
@@ -142,6 +154,7 @@ function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ y: textY }}
           className="relative flex flex-col items-center lg:items-start justify-end w-full lg:w-auto"
         >
           <LayeredText

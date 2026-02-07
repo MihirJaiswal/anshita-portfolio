@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Alumni_Sans, Splash, Poppins } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/ScrollProgress";
+import KonamiCode from "@/components/KonamiCode";
 
 const alumniSans = Alumni_Sans({
   subsets: ["latin"],
@@ -16,14 +19,19 @@ const splash = Splash({
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], 
-  // Or just weight: "400" if you only need Regular
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: "Anshita Rathore | UI/UX Designer",
   description:
     "Portfolio of Anshita Rathore, a UI/UX Designer passionate about creating intuitive digital experiences.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#E8E8E6",
 };
 
 export default function RootLayout({
@@ -33,8 +41,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${alumniSans.variable} ${splash.variable} ${poppins.variable} antialiased`}>
-        {children}
+      <body
+        className={`${alumniSans.variable} ${splash.variable} ${poppins.variable} antialiased`}
+      >
+        <SmoothScroll>
+          <ScrollProgress />
+          {children}
+          <KonamiCode />
+        </SmoothScroll>
       </body>
     </html>
   );

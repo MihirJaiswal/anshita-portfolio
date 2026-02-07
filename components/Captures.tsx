@@ -1,11 +1,30 @@
 "use client";
+import { useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import LayeredText from "./LayeredText";
 import { BentoGrid } from "./BentoGrid";
+import Lightbox from "./Lightbox";
+import ShareButton from "./ShareButton";
 import { captures } from "@/constant";
 
 function Captures() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const handleNavigate = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   // Specific layout for each image to match the bento grid style
   const getLayoutClass = (index: number) => {
     const pattern = index % 9;
@@ -57,7 +76,10 @@ function Captures() {
             <BentoGrid
               height="h-[250px] sm:h-[280px] lg:h-[300px]"
               component={
-                <div className="relative w-full h-full group cursor-pointer overflow-hidden">
+                <div
+                  className="relative w-full h-full group cursor-pointer overflow-hidden"
+                  onClick={() => openLightbox(index)}
+                >
                   {/* Blurred background image */}
                   <Image
                     src={src}
@@ -86,6 +108,20 @@ function Captures() {
           </motion.div>
         ))}
       </div>
+
+      {/* Share button */}
+      <div className="flex justify-center mt-8">
+        <ShareButton title="My Captures Gallery" />
+      </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={captures}
+        currentIndex={currentImageIndex}
+        isOpen={lightboxOpen}
+        onClose={closeLightbox}
+        onNavigate={handleNavigate}
+      />
     </section>
   );
 }

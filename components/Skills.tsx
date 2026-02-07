@@ -39,8 +39,8 @@ function Skills() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 text-black text-xs sm:text-sm font-medium rounded-sm cursor-default transition-shadow hover:shadow-md font-[poppins]"
+                  whileHover={{ y: -2 }}
+                  className="px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 text-black text-xs sm:text-sm font-medium rounded-sm cursor-default transition-shadow font-[poppins]"
                 >
                   {skill}
                 </motion.span>
