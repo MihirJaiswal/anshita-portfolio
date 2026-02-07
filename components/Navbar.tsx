@@ -3,9 +3,11 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import BrushStroke from "./BrushStroke";
 import SignatureAnimation from "./Signature";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(0);
 
   return (
     <>
@@ -16,32 +18,42 @@ function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-[#E8E8E6]/80 backdrop-blur-sm"
       >
         <div className="flex justify-between items-center max-w-5xl mx-auto lg:px-8">
-          {/* Logo - Optional */}
           <div className="w-12 scale-75 xs:scale-100 ml-2 xs:ml-4">
-            <SignatureAnimation/>
+            <SignatureAnimation />
           </div>
 
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex gap-8 lg:gap-16 text-sm tracking-wide text-gray-800">
             {["Home", "About", "Work", "Connect"].map((item, index) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`relative group font-poppins text-base ${
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(0)}
+                className={`relative font-poppins text-base ${
                   index === 0 ? "text-black font-medium" : "hover:text-black"
                 } transition-colors`}
                 whileHover={{ scale: 1.02 }}
               >
                 {item}
-                {index === 0 && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-black" />
-                )}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300" />
+                <motion.div
+                  animate={{
+                    scaleX: hoveredIndex === index || index === 0 ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="absolute -bottom-1 left-0 w-full origin-left"
+                >
+                  <Image
+                    src="/assets/line2.svg"
+                    alt=""
+                    width={48}
+                    height={2}
+                    className="w-full h-0.5"
+                  />
+                </motion.div>
               </motion.a>
             ))}
           </div>
 
-          {/* Desktop Resume Button */}
           <BrushStroke className="hidden md:flex h-10 items-center">
             <motion.a
               href="#resume"
@@ -59,18 +71,42 @@ function Navbar() {
             className="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center items-center"
             aria-label="Toggle menu"
           >
-            <motion.span
+            <motion.div
               animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="w-full h-0.5 bg-black block"
-            />
-            <motion.span
+              className="h-0.5"
+            >
+              <Image
+                src="/assets/line3.svg"
+                alt=""
+                width={24}
+                height={2}
+                className="h-1"
+              />
+            </motion.div>
+            <motion.div
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-full h-0.5 bg-black block"
-            />
-            <motion.span
+              className="h-0.5"
+            >
+              <Image
+                src="/assets/line3.svg"
+                alt=""
+                width={24}
+                height={2}
+                className="h-1"
+              />
+            </motion.div>
+            <motion.div
               animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="w-full h-0.5 bg-black block"
-            />
+              className="h-0.5"
+            >
+              <Image
+                src="/assets/line3.svg"
+                alt=""
+                width={24}
+                height={2}
+                className="h-1"
+              />
+            </motion.div>
           </button>
         </div>
 
@@ -78,9 +114,11 @@ function Navbar() {
         <motion.div
           initial={false}
           animate={
-            isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+            isOpen
+              ? { height: "auto", opacity: 1, filter: "blur(0px)" }
+              : { height: 0, opacity: 0, filter: "blur(150px)" }
           }
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, delay: 0, ease: "easeInOut" }}
           className="md:hidden overflow-hidden"
         >
           <div className="pt-4 pb-2 flex flex-col gap-4">
@@ -97,16 +135,6 @@ function Navbar() {
                 {item}
               </motion.a>
             ))}
-            <BrushStroke className="h-10 flex items-center w-fit mt-2">
-              <motion.a
-                href="#resume"
-                onClick={() => setIsOpen(false)}
-                whileTap={{ scale: 0.98 }}
-                className="px-6 py-12 text-sm font-poppins"
-              >
-                Resume
-              </motion.a>
-            </BrushStroke>
           </div>
         </motion.div>
       </motion.nav>
