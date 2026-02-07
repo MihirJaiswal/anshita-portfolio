@@ -20,7 +20,7 @@ function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative pt-32 sm:pt-24 pb-16 sm:pb-13.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center min-h-screen xs:justify-center overflow-hidden"
+      className="relative pt-24 xs:pt-32 sm:pt-24 pb-16 sm:pb-13.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center min-h-screen xs:justify-center overflow-hidden"
     >
       {/* Parallax background layer */}
       <motion.div
