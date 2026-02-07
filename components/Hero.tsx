@@ -64,9 +64,10 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.4 }}
-          className="text-center text-base sm:text-lg md:text-xl mt-4 text-gray-600 max-w-88  xs:max-w-2xl font-poppins"
+          className="text-center text-sm sm:text-lg md:text-xl mt-4 text-gray-600 max-w-88  xs:max-w-2xl font-poppins px-2"
         >
-          Designing interfaces that are clear, usable, and thoughtful
+          <span className="hidden sm:block">Designing interfaces that are clear, usable, and thoughtful</span>
+          <span className="sm:hidden">Designing smooth interfaces thoughtfully</span>
         </motion.p>
       </motion.div>
     </section>
