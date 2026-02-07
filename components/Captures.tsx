@@ -55,7 +55,7 @@ function Captures() {
       <LayeredText
         mainWord="CAPTURES"
         insideWord="Captures"
-        mainClassName="!text-[120px] sm:!text-[160px] lg:!text-[200px] -my-2 sm:-my-4 md:-my-8 lg:-my-16"
+        mainClassName="!text-[100px] sm:!text-[160px] lg:!text-[200px] -my-2 sm:-my-4 md:-my-8 lg:-my-16"
         insideClassName="!text-[40px] sm:!text-[52px] lg:!text-[64px]"
       />
       <p className="text-center text-base sm:text-lg lg:text-[20px] mb-10 sm:mb-12 lg:mb-16 font-[poppins] mx-auto max-w-3xl px-4">

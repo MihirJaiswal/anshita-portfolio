@@ -80,7 +80,7 @@ function Skills() {
                 whileHover={{ y: -5, scale: 1.05 }}
                 className="group flex flex-col items-center gap-2 relative"
               >
-                <div className="w-20 h-20 relative">
+                <div className="w-18 h-18 xs:w-20 xs:h-20 relative">
                   <Image
                     src={tool.icon}
                     alt={`${tool.name} logo`}

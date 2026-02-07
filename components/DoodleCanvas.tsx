@@ -352,7 +352,7 @@ export default function DoodleCanvas() {
                   onTouchMove={draw}
                   onTouchEnd={stopDrawing}
                   className="touch-none"
-                  height={500}
+                  height={400}
                   width={700}
                 />
 

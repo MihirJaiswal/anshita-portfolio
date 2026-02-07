@@ -98,8 +98,8 @@ function Artwork() {
       <LayeredText
         mainWord="ARTWORK"
         insideWord="Artwork"
-        mainClassName="!text-[120px] md:!text-[200px] -my-2 md:-my-4 sm:-my-8 lg:-my-16"
-        insideClassName="!text-[40px] md:!text-[64px]"
+        mainClassName="!text-[100px] sm:!text-[160px] lg:!text-[200px] -my-2 sm:-my-4 md:-my-8 lg:-my-16"
+        insideClassName="!text-[40px] sm:!text-[52px] lg:!text-[64px]"
       />
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -219,7 +219,7 @@ function Artwork() {
               alt={`Artwork ${index + 1}`}
               width={500}
               height={700}
-              className="w-full rounded-lg object-cover shadow-md"
+              className="w-full object-cover"
             />
           </motion.div>
         ))}

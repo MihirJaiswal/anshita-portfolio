@@ -31,7 +31,7 @@ function Projects() {
           > 
             {/* Content */}
             <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-5 overflow-hidden">
-              <h3 className="text-3xl xs:text-[35px] md:text-[50px] lg:text-[64px] font-[splash] font-medium whitespace-nowrap">
+              <h3 className="text-2xl xs:text-[35px] md:text-[50px] lg:text-[64px] font-[splash] font-medium ">
                 {project.title}
               </h3>
               <Image
@@ -61,7 +61,7 @@ function Projects() {
                     </div>
                   ))}
                 </div>
-                <div className="ml-0 md:ml-6 flex items-center gap-4">
+                <div className="ml-5 flex items-center gap-4">
                   <BrushStroke className="h-10 md:h-12 flex items-center justify-center w-fit">
                     <Link href={`/projects/${project.id}`}>
                       <motion.button
