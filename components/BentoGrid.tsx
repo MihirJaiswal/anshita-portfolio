@@ -56,7 +56,7 @@ export function BentoGrid({
             className={clsx(
               "absolute inset-0 bg-linear-to-b from-white",
               gradientPercentage,
-              "group-data-[dark]:from-zinc-950",
+              "group-data-dark:from-zinc-950",
             )}
           />
         )}
@@ -66,7 +66,7 @@ export function BentoGrid({
             className={clsx(
               "absolute inset-0 bg-linear-to-t from-white",
               gradientPercentage,
-              "group-data-[dark]:from-zinc-950",
+              "group-data-dark:from-zinc-950",
             )}
           />
         )}
@@ -89,7 +89,7 @@ export function BentoGrid({
             <h3
               className={clsx(
                 titleClassName,
-                "text-gray-950 group-data-[dark]:text-white dark:text-white",
+                "text-gray-950 group-data-dark:text-white dark:text-white",
               )}
             >
               {title}
@@ -99,7 +99,7 @@ export function BentoGrid({
             <p
               className={clsx(
                 descriptionClassName,
-                "text-gray-600 group-data-[dark]:text-gray-300 dark:text-gray-300",
+                "text-gray-600 group-data-dark:text-gray-300 dark:text-gray-300",
               )}
             >
               {description}

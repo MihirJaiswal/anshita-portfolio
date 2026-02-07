@@ -227,7 +227,7 @@ function Connect() {
             alt="anshita"
             height={400}
             width={300}
-            className="w-full max-w-[500px] h-88 sm:h-104"
+            className="w-full max-w-125 h-88 sm:h-104"
           />
         </motion.div>
       </motion.div>

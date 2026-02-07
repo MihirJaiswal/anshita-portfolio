@@ -45,7 +45,7 @@ const SignatureAnimation = () => {
             initial={{ opacity: 0, y: -10, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#E8E8E6] text-gray-800 px-4 py-2.5 rounded-lg text-sm font-medium shadow-xl border border-[#A5C9D1]/30 z-[100]"
+            className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#E8E8E6] text-gray-800 px-4 py-2.5 rounded-lg text-sm font-medium shadow-xl border border-[#A5C9D1]/30 z-100"
           >
             {clickCount === 5
               ? "✨ Rainbow mode activated!"

@@ -104,7 +104,7 @@ export default function KonamiCode() {
           animate={{ opacity: 1, y: 0, x: "-50%", scale: 1 }}
           exit={{ opacity: 0, y: -20, x: "-50%", scale: 0.95 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed top-8 left-1/2 z-100 bg-[#E8E8E6] text-gray-800 px-6 py-5 rounded-xl shadow-xl border border-[#A5C9D1]/30 font-[poppins] min-w-[300px]"
+          className="fixed top-8 left-1/2 z-100 bg-[#E8E8E6] text-gray-800 px-6 py-5 rounded-xl shadow-xl border border-[#A5C9D1]/30 font-[poppins] min-w-75"
         >
           {/* Decorative brush stroke background */}
           <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#A5C9D1]/15 rounded-full blur-2xl pointer-events-none" />

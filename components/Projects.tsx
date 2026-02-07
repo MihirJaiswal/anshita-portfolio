@@ -43,7 +43,7 @@ function Projects() {
                 className="hidden xs:block h-20 w-full object-contain my-4"
               />
             </div>
-            <div className="flex flex-col flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0">
+            <div className="flex flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0">
               <div className="w-full lg:max-w-lg">
                 <div className="space-y-3 lg:space-y-4 mb-4 md:mb-6">
                   {project.description.map((desc, i) => (
