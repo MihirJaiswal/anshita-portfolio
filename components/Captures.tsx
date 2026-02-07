@@ -13,7 +13,7 @@ function Captures() {
       case 0:
         return "col-span-1 row-span-1"; // butterfly
       case 1:
-        return "col-span-1 sm:col-span-2 row-span-1"; // bike/door
+        return "col-span-1 lg:col-span-2 row-span-1"; // bike/door
       case 2:
         return "col-span-1 row-span-1"; // dark tree
       case 3:
@@ -23,7 +23,7 @@ function Captures() {
       case 6:
         return "col-span-1 row-span-1"; // statue
       case 7:
-        return "col-span-1 sm:col-span-2 row-span-1"; // sunset lamps
+        return "col-span-1 lg:col-span-2 row-span-1"; // sunset lamps
       case 8:
         return "col-span-1 row-span-1"; // butterfly on flower
       default:
@@ -57,14 +57,24 @@ function Captures() {
             <BentoGrid
               height="h-[250px] sm:h-[280px] lg:h-[300px]"
               component={
-                <div className="relative w-full h-full group cursor-pointer">
+                <div className="relative w-full h-full group cursor-pointer overflow-hidden">
+                  {/* Blurred background image */}
+                  <Image
+                    src={src}
+                    alt={`Capture ${index + 1} background`}
+                    fill
+                    unoptimized
+                    className="object-cover blur-2xl scale-110 opacity-70"
+                  />
+                  {/* Main image */}
                   <Image
                     src={src}
                     alt={`Capture ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    unoptimized
+                    className="object-contain lg:object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-20" />
                 </div>
               }
               enableTitle={false}

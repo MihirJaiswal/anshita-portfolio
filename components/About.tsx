@@ -16,7 +16,7 @@ function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative flex-1 items-center justify-center scale-75 md:scale-90"
+          className="relative flex-1 items-center justify-center md:scale-90"
         >
           <div className="relative w-79 h-108 mx-auto">
             <div className="relative w-full h-full z-20">
@@ -39,7 +39,7 @@ function About() {
                 height={64}
                 className="relative z-10 w-30 h-16 object-contain"
               />
-              <span className="absolute top-[-50%] right-[-29%] text-[24px] lg:text-[32px] font-[splash]">
+              <span className="absolute top-[-50%] right-[-29%] text-[24px] xl:text-[32px] font-[splash]">
                 Creative
               </span>
             </div>
@@ -52,7 +52,7 @@ function About() {
                 height={85}
                 className="relative z-10 w-16 h-21 object-contain"
               />
-              <span className="absolute top-[-35%] right-[-90%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+              <span className="absolute top-[-35%] right-[-90%] text-[24px] xl:text-[32px] font-[splash] whitespace-nowrap">
                 Detail-oriented
               </span>
             </div>
@@ -65,7 +65,7 @@ function About() {
                 height={48}
                 className="relative z-10 w-32 h-12 object-contain"
               />
-              <span className="absolute top-[-60%] right-[40%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+              <span className="absolute top-[-60%] right-[40%] text-[24px] xl:text-[32px] font-[splash] whitespace-nowrap">
                 Sociable
               </span>
             </div>
@@ -78,7 +78,7 @@ function About() {
                 height={74}
                 className="relative z-10 w-26 h-18.5 object-contain"
               />
-              <span className="absolute bottom-[-50%] right-[-45%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+              <span className="absolute bottom-[-50%] right-[-45%] text-[24px] xl:text-[32px] font-[splash] whitespace-nowrap">
                 Empathic
               </span>
             </div>
@@ -91,7 +91,7 @@ function About() {
                 height={64}
                 className="relative z-10 w-30 h-16 object-contain"
               />
-              <span className="absolute bottom-[-54%] left-[-55%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+              <span className="absolute bottom-[-54%] xl:left-[-55%] lg:left-[-15%] left-[-55%] text-[24px] xl:text-[32px] font-[splash] whitespace-nowrap">
                 Motivated
               </span>
             </div>
@@ -104,7 +104,7 @@ function About() {
                 height={65}
                 className="relative z-10 w-29.5 h-16 object-contain"
               />
-              <span className="absolute bottom-[-65%] right-[-50%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+              <span className="absolute bottom-[-65%] right-[-50%] text-[24px] xl:text-[32px] font-[splash] whitespace-nowrap">
                 Fast learner
               </span>
             </div>
@@ -147,7 +147,7 @@ function About() {
           <LayeredText
             mainWord="HELLO"
             insideWord="Hello"
-            mainClassName="!text-[120px] sm:!text-[160px] lg:!text-[200px] -my-2 sm:-my-4 md:-my-8 lg:-my-16"
+            mainClassName="!text-[120px] sm:!text-[160px] lg:!text-[200px] -my-8 lg:-my-16"
             insideClassName="!text-[40px] sm:!text-[52px] lg:!text-[64px]"
           />
 
@@ -156,7 +156,7 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4 leading-relaxed max-w-md p-2"
+            className="space-y-4 leading-relaxed lg:max-w-md p-2"
           >
             <p className="font-['Poppins'] font-normal text-[16px] sm:text-[18px] lg:text-[20px] leading-7 sm:leading-8 lg:leading-8.5 tracking-normal text-justify lg:text-justify align-middle">
               I&apos;m Anshita, a UI/UX designer who loves understanding people

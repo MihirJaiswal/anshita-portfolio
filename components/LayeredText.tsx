@@ -34,7 +34,7 @@ const LayeredText: React.FC<LayeredTextProps> = ({
         transition={{ duration: 0.8, delay: animationDelay + 0.2 }}
         className={cn(
           "font-['Alumni_Sans'] font-bold l leading-0 tracking-normal text-center flex items-center justify-center h-max",
-          "text-[120px] sm:text-[200px] md:text-[280px] lg:text-[320px]",
+          "text-[120px] sm:text-[200px] md:text-[240px] lg:text-[320px]",
           mainColor,
           mainClassName,
         )}

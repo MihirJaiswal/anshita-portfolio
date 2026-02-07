@@ -20,7 +20,7 @@ function Connect() {
       </p>
 
       {/* Desktop Layout - Image with decorative lines */}
-      <div className="hidden md:flex items-center justify-center relative z-0">
+      <div className="hidden lg:flex items-center justify-center relative z-0">
         <Image
           src="/assets/connect/anshita-connect.png"
           alt="anshita"
@@ -103,8 +103,8 @@ function Connect() {
       </div>
 
       {/* Mobile Layout - Simple centered layout with icons */}
-      <div className="md:hidden flex flex-col items-center gap-8">
-        <div className="grid grid-cols-4 gap-2 w-full">
+      <div className="lg:hidden flex flex-col items-center gap-8">
+        <div className="flex items-center justify-center gap-2 sm:gap-6 w-full">
           <motion.a
             href="mailto:your-email@example.com"
             whileHover={{ scale: 1.05 }}

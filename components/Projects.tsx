@@ -27,10 +27,10 @@ function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          >
+          > 
             {/* Content */}
-            <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-5">
-              <h3 className="text-3xl md:text-[64px] font-[splash] font-medium whitespace-nowrap">
+            <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-5 overflow-hidden">
+              <h3 className="text-3xl xs:text-[35px] md:text-[50px] lg:text-[64px] font-[splash] font-medium whitespace-nowrap">
                 {project.title}
               </h3>
               <Image
@@ -38,16 +38,16 @@ function Projects() {
                 alt="decorative line"
                 width={200}
                 height={100}
-                className="h-10 md:h-20 w-full object-contain my-4"
+                className="hidden xs:block h-20 w-full object-contain my-4"
               />
             </div>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0">
-              <div className="w-full md:max-w-lg">
-                <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+            <div className="flex flex-col flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0">
+              <div className="w-full lg:max-w-lg">
+                <div className="space-y-3 lg:space-y-4 mb-4 md:mb-6">
                   {project.description.map((desc, i) => (
                     <div
                       key={i}
-                      className="flex gap-2 md:gap-3 text-gray-700 leading-relaxed"
+                      className="flex gap-2 lg:gap-3 text-gray-700 leading-relaxed"
                     >
                       <Image
                         src="/assets/projects/arrow.svg"
@@ -72,13 +72,14 @@ function Projects() {
                   </BrushStroke>
                 </div>
               </div>
-              <div className="w-full md:w-auto">
+              <div className="w-full lg:w-auto">
                 <Image
                   src={project.image}
                   alt={project.title}
                   height={500}
                   width={500}
-                  className="w-full object-cover h-60 md:h-76"
+                  unoptimized
+                  className="w-full object-cover h-full lg:h-68 pb-8 lg:pb-0"
                 />
               </div>
             </div>

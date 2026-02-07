@@ -18,14 +18,14 @@ function Artwork() {
       </p>
 
       {/* Desktop Layout - 3 columns */}
-      <div className="hidden md:flex items-center justify-center gap-9">
+      <div className="hidden xs:flex items-center justify-center gap-4">
         <div className="flex flex-col">
           <Image
             src="/assets/artwork/art3.png"
             alt="Artwork 1"
             width={500}
             height={700}
-            className="mb-6 rounded-lg object-cover"
+            className="mb-3 rounded-lg object-cover"
           />
           <Image
             src="/assets/artwork/art1.png"
@@ -41,7 +41,7 @@ function Artwork() {
             alt="Artwork 1"
             width={580}
             height={700}
-            className="mb-6 rounded-lg object-cover"
+            className="mb-3 rounded-lg object-cover"
           />
         </div>
         <div>
@@ -50,7 +50,7 @@ function Artwork() {
             alt="Artwork 1"
             width={500}
             height={700}
-            className="mb-6 rounded-lg object-cover"
+            className="mb-3 rounded-lg object-cover"
           />
           <Image
             src="/assets/artwork/art2.png"
@@ -63,7 +63,7 @@ function Artwork() {
       </div>
 
       {/* Mobile Layout - Single column grid */}
-      <div className="md:hidden grid grid-cols-1 gap-6">
+      <div className="xs:hidden grid grid-cols-1 gap-6">
         <Image
           src="/assets/artwork/art3.png"
           alt="Artwork 1"

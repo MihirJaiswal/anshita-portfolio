@@ -7,7 +7,7 @@ import BrushStroke from "./BrushStroke";
 function Skills() {
   return (
     <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16 justify-between">
+      <div className="flex flex-col md:flex-row items-start  gap-12 lg:gap-16 justify-between">
         {/* Skills Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ function Skills() {
               alt="decorative line"
               width={200}
               height={5}
-              className="h-1 w-auto object-contain"
+              className="h-2 w-[65%] xs:w-[75%] md:w-54 lg:w-72 object-contain"
             />
           </div>
           <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-5.5">
@@ -66,7 +66,7 @@ function Skills() {
               alt="decorative line"
               width={200}
               height={4}
-              className="h-1 w-auto object-contain"
+              className="h-1 w-[70%] xs:w-[80%] md:w-48 lg:w-54 object-contain"
             />
           </div>
           <div className="flex flex-wrap gap-3 sm:gap-4 justify-start lg:justify-start">

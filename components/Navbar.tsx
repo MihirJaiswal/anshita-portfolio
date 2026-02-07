@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import BrushStroke from "./BrushStroke";
-import Signature from "./signature/Signature";
+import SignatureAnimation from "./Signature";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +15,11 @@ function Navbar() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-[#E8E8E6]/80 backdrop-blur-sm"
       >
-        <div className="flex justify-between items-center max-w-5xl mx-auto">
+        <div className="flex justify-between items-center max-w-5xl mx-auto lg:px-10">
           {/* Logo - Optional */}
-          {/* <div className="w-12">
-            <Signature/>
-          </div> */}
+          <div className="w-12 scale-75 xs:scale-100 ml-2 xs:ml-4">
+            <SignatureAnimation/>
+          </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex gap-8 lg:gap-16 text-sm tracking-wide text-gray-800">

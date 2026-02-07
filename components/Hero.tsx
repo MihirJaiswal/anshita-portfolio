@@ -8,13 +8,13 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 sm:pt-24 pb-16 sm:pb-13.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center min-h-screen justify-center"
+      className="relative pt-32 sm:pt-24 pb-16 sm:pb-13.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center min-h-screen xs:justify-center"
     >
       <HeroImage />
       <LayeredText 
         mainWord="PORTFOLIO" 
         insideWord="Anshita Rathore" 
-        mainClassName="-my-8 sm:-my-8 md:-my-20" 
+        mainClassName="-my-8 sm:-my-8 md:-my-15 lg:-my-20" 
       />
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
