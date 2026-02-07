@@ -78,7 +78,7 @@ function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.05 }}
-                className="group flex flex-col items-center gap-2"
+                className="group flex flex-col items-center gap-2 relative"
               >
                 <div className="w-20 h-20 relative">
                   <Image
@@ -89,6 +89,10 @@ function Skills() {
                     className="object-contain"
                   />
                 </div>
+                {/* Tooltip */}
+                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs font-poppins rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  {tool.name}
+                </span>
               </motion.div>
             ))}
           </div>

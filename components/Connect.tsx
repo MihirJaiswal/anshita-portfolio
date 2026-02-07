@@ -39,18 +39,20 @@ const floatAnimation = {
 
 const socialLinks = [
   {
-    href: "mailto:your-email@example.com",
+    href: "mailto:anshitarathore25@gmail.com",
     src: "/assets/connect/mail.png",
     alt: "mail",
+    username: "anshitarathore25@gmail.com",
     position: "top-[20%] left-[13.5%]",
     lineSrc: "/assets/connect/line1.svg",
     lineClass: "w-47 h-40",
     iconPosition: "top-[-38%] -left-[50%]",
   },
   {
-    href: "https://twitter.com/yourhandle",
+    href: "https://x.com/anshittaa",
     src: "/assets/connect/x.png",
     alt: "x",
+    username: "@anshittaa",
     position: "bottom-[36%] left-[6%]",
     lineSrc: "/assets/connect/line2.svg",
     lineClass: "w-50 h-16",
@@ -58,9 +60,10 @@ const socialLinks = [
     external: true,
   },
   {
-    href: "https://linkedin.com/in/yourprofile",
+    href: "https://www.linkedin.com/in/anshitarathore",
     src: "/assets/connect/linkedin.png",
     alt: "linkedin",
+    username: "anshitarathore",
     position: "top-[25%] right-[15%]",
     lineSrc: "/assets/connect/line3.svg",
     lineClass: "w-40 h-34",
@@ -68,9 +71,10 @@ const socialLinks = [
     external: true,
   },
   {
-    href: "https://instagram.com/yourhandle",
+    href: "https://www.instagram.com/anshita.137",
     src: "/assets/connect/instagram.png",
     alt: "instagram",
+    username: "anshita.137",
     position: "top-[54%] right-[3.5%]",
     lineSrc: "/assets/connect/line4.svg",
     lineClass: "w-60 h-30",
@@ -96,7 +100,7 @@ function Connect() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="text-center font-poppins text-base md:text-xl mb-10 md:mb-16 px-4"
+        className="text-center font-poppins text-base md:text-xl mb-10 md:mb-1 px-4"
       >
         If something here stayed with you, I&apos;d love to hear from you.
       </motion.p>
@@ -151,7 +155,7 @@ function Connect() {
               href={link.href}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className={`absolute ${link.iconPosition} text-[32px] z-20`}
+              className={`absolute ${link.iconPosition} text-[32px] z-20 group`}
               whileHover={{ scale: 1.15, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
               animate={{
@@ -172,6 +176,10 @@ function Connect() {
                 unoptimized
                 className="drop-shadow-lg"
               />
+              {/* Tooltip */}
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs font-poppins rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                {link.username}
+              </span>
             </motion.a>
           </motion.div>
         ))}
@@ -195,8 +203,7 @@ function Connect() {
               rel={link.external ? "noopener noreferrer" : undefined}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center"
-            >
+              >
               <Image
                 src={link.src}
                 alt={link.alt}
@@ -205,6 +212,10 @@ function Connect() {
                 unoptimized
                 className="drop-shadow-md"
               />
+              {/* Tooltip */}
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs font-poppins rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                {link.username}
+              </span>
             </motion.a>
           ))}
         </div>
