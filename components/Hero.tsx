@@ -36,8 +36,7 @@ function Hero() {
         <LayeredText
           mainWord="PORTFOLIO"
           insideWord="Anshita Rathore"
-          mainClassName="!text-[110px] sm:!text-[160px] lg:!text-[200px] -my-8 sm:-my-8 md:-my-15 lg:-my-20"
-          insideClassName="!text-[40px] sm:!text-[52px] lg:!text-[64px]"
+          mainClassName="-my-8 sm:-my-8 md:-my-15 lg:-my-20"
         />
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
