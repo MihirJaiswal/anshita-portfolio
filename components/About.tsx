@@ -1,18 +1,22 @@
-'use client'
+"use client";
 import { motion } from "motion/react";
 import Image from "next/image";
 import LayeredText from "./LayeredText";
 
 function About() {
   return (
-    <section id="about" className="py-20 max-w-6xl mx-auto">
-      <div className="flex justify-between gap-12 items-center">
+    <section
+      id="about"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+    >
+      <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-12 items-center">
+        {/* Image Section with Decorative Text */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative flex-1 items-center justify-center"
+          className="relative flex-1 items-center justify-center scale-75 md:scale-90"
         >
           <div className="relative w-79 h-108 mx-auto">
             <div className="relative w-full h-full z-20">
@@ -26,71 +30,88 @@ function About() {
               />
             </div>
 
-            {/* Decorative Lines*/}
-            <div className="absolute top-[5%] right-[-30%]">
-             <Image
-              src="/assets/about/line1.svg"
-              alt="line 1"
-              width={119}
-              height={64}
-              className="relative z-10 w-30 h-16 object-contain"
-            />
-            <span className="absolute top-[-50%] right-[-29%] text-[32px] font-[splash]">Creative</span>
+            {/* Decorative Lines - Hidden on mobile, visible on md+ */}
+            <div className="hidden md:block absolute top-[5%] right-[-30%]">
+              <Image
+                src="/assets/about/line1.svg"
+                alt="line 1"
+                width={119}
+                height={64}
+                className="relative z-10 w-30 h-16 object-contain"
+              />
+              <span className="absolute top-[-50%] right-[-29%] text-[24px] lg:text-[32px] font-[splash]">
+                Creative
+              </span>
             </div>
-            <div className="absolute -top-[8%] left-[-15%]">
-            <Image
-              src="/assets/about/line6.svg"
-              alt="line 6"
-              width={64}
-              height={85}
-              className="relative z-10 w-16 h-21 object-contain"
-            />
-            <span className="absolute top-[-35%] right-[-90%] text-[32px] font-[splash] whitespace-nowrap">Detail-oriented</span>
+
+            <div className="hidden md:block absolute -top-[8%] left-[-15%]">
+              <Image
+                src="/assets/about/line6.svg"
+                alt="line 6"
+                width={64}
+                height={85}
+                className="relative z-10 w-16 h-21 object-contain"
+              />
+              <span className="absolute top-[-35%] right-[-90%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+                Detail-oriented
+              </span>
             </div>
-            <div className="absolute top-[45%] left-[-35%] ">
-            <Image
-              src="/assets/about/line5.svg"
-              alt="line 5"
-              width={131}
-              height={48}
-              className="relative z-10 w-32 h-12 object-contain"
-            />
-            <span className="absolute top-[-60%] right-[40%] text-[32px] font-[splash] whitespace-nowrap">Sociable</span>
+
+            <div className="hidden md:block absolute top-[45%] left-[-35%]">
+              <Image
+                src="/assets/about/line5.svg"
+                alt="line 5"
+                width={131}
+                height={48}
+                className="relative z-10 w-32 h-12 object-contain"
+              />
+              <span className="absolute top-[-60%] right-[40%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+                Sociable
+              </span>
             </div>
-            
-            
-            <div className="absolute top-[45%] right-[-30%] ">
-            <Image
-              src="/assets/about/line2.svg"
-              alt="line 2"
-              width={104}
-              height={74}
-              className="relative z-10 w-26 h-18.5 object-contain"
-            />
-            <span className="absolute bottom-[-50%] right-[-45%] text-[32px] font-[splash] whitespace-nowrap">Empathic</span>
+
+            <div className="hidden md:block absolute top-[45%] right-[-30%]">
+              <Image
+                src="/assets/about/line2.svg"
+                alt="line 2"
+                width={104}
+                height={74}
+                className="relative z-10 w-26 h-18.5 object-contain"
+              />
+              <span className="absolute bottom-[-50%] right-[-45%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+                Empathic
+              </span>
             </div>
-            <div className="absolute bottom-[5%] left-[-35%]">
-            <Image
-              src="/assets/about/line4.svg"
-              alt="line 4"
-              width={119}
-              height={64}
-              className="relative z-10 w-30 h-16 object-contain"
-            />
-            <span className="absolute bottom-[-54%] left-[-55%] text-[32px] font-[splash] whitespace-nowrap">Motivated</span>
+
+            <div className="hidden md:block absolute bottom-[5%] left-[-35%]">
+              <Image
+                src="/assets/about/line4.svg"
+                alt="line 4"
+                width={119}
+                height={64}
+                className="relative z-10 w-30 h-16 object-contain"
+              />
+              <span className="absolute bottom-[-54%] left-[-55%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+                Motivated
+              </span>
             </div>
-            <div className="absolute -bottom-[5%] right-[-15%] ">
-            <Image
-              src="/assets/about/line3.svg"
-              alt="line 3"
-              width={118}
-              height={65}
-              className="relative z-10 w-29.5 h-16 object-contain"
-            />
-            <span className="absolute bottom-[-65%] right-[-50%] text-[32px] font-[splash] whitespace-nowrap">Fast learner</span>
+
+            <div className="hidden md:block absolute -bottom-[5%] right-[-15%]">
+              <Image
+                src="/assets/about/line3.svg"
+                alt="line 3"
+                width={118}
+                height={65}
+                className="relative z-10 w-29.5 h-16 object-contain"
+              />
+              <span className="absolute bottom-[-65%] right-[-50%] text-[24px] lg:text-[32px] font-[splash] whitespace-nowrap">
+                Fast learner
+              </span>
             </div>
           </div>
-          <div>
+
+          {/* Stars - Hidden on mobile */}
+          <div className="hidden md:block">
             <Image
               src="/assets/about/star1.svg"
               alt="star"
@@ -115,18 +136,19 @@ function About() {
           </div>
         </motion.div>
 
+        {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative flex flex-col items-start justify-end"
+          className="relative flex flex-col items-center lg:items-start justify-end w-full lg:w-auto"
         >
           <LayeredText
             mainWord="HELLO"
             insideWord="Hello"
-            mainClassName="!text-[200px] -my-4 sm:-my-8 md:-my-16"
-            insideClassName="!text-[64px]"
+            mainClassName="!text-[120px] sm:!text-[160px] lg:!text-[200px] -my-2 sm:-my-4 md:-my-8 lg:-my-16"
+            insideClassName="!text-[40px] sm:!text-[52px] lg:!text-[64px]"
           />
 
           <motion.div
@@ -136,13 +158,14 @@ function About() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-4 leading-relaxed max-w-md p-2"
           >
-            <p className="font-['Poppins'] font-normal text-[20px] leading-8.5 tracking-normal text-justify align-middle">
+            <p className="font-['Poppins'] font-normal text-[16px] sm:text-[18px] lg:text-[20px] leading-7 sm:leading-8 lg:leading-8.5 tracking-normal text-justify lg:text-justify align-middle">
               I&apos;m Anshita, a UI/UX designer who loves understanding people
-              and how they interact with digital spaces. I care deeply about the why behind every design decision and the
-              small details that make an experience feel right. For me, design
-              isn&apos;t just about screens or visuals, it&apos;s about creating
-              interfaces that feel intuitive and easy to use. If something works
-              without explanation, I know I&apos;ve done my job.
+              and how they interact with digital spaces. I care deeply about the
+              why behind every design decision and the small details that make
+              an experience feel right. For me, design isn&apos;t just about
+              screens or visuals, it&apos;s about creating interfaces that feel
+              intuitive and easy to use. If something works without explanation,
+              I know I&apos;ve done my job.
             </p>
           </motion.div>
         </motion.div>

@@ -20,7 +20,7 @@ function HeroImage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
-      className="w-250 h-70 overflow-hidden opacity-100"
+      className="w-120 h-45 md:w-250 md:h-70 overflow-hidden opacity-100"
     >
       {/* Eyes closed image - visible initially */}
       <motion.div
