@@ -45,7 +45,7 @@ const socialLinks = [
     position: "top-[20%] left-[13.5%]",
     lineSrc: "/assets/connect/line1.svg",
     lineClass: "w-47 h-40",
-    iconPosition: "top-[-38%] -left-[40%]",
+    iconPosition: "top-[-38%] -left-[50%]",
   },
   {
     href: "https://twitter.com/yourhandle",
@@ -54,7 +54,7 @@ const socialLinks = [
     position: "bottom-[36%] left-[6%]",
     lineSrc: "/assets/connect/line2.svg",
     lineClass: "w-50 h-16",
-    iconPosition: "top-[0%] -left-[40%]",
+    iconPosition: "top-[0%] -left-[50%]",
     external: true,
   },
   {
@@ -74,7 +74,7 @@ const socialLinks = [
     position: "top-[54%] right-[3.5%]",
     lineSrc: "/assets/connect/line4.svg",
     lineClass: "w-60 h-30",
-    iconPosition: "top-[0%] -right-[40%]",
+    iconPosition: "top-[4%] -right-[40%]",
     external: true,
   },
 ];

@@ -131,7 +131,7 @@ function Artwork() {
               alt="Artwork 1"
               width={500}
               height={700}
-              className="rounded-lg object-cover shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg object-cover"
             />
           </motion.div>
           <motion.div
@@ -145,7 +145,7 @@ function Artwork() {
               alt="Artwork 2"
               width={500}
               height={700}
-              className="rounded-lg object-cover shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg object-cover"
             />
           </motion.div>
         </motion.div>
@@ -161,7 +161,7 @@ function Artwork() {
               alt="Artwork 1"
               width={580}
               height={700}
-              className="rounded-lg object-cover shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg object-cover"
             />
           </motion.div>
         </motion.div>
@@ -177,7 +177,7 @@ function Artwork() {
               alt="Artwork 1"
               width={500}
               height={700}
-              className="rounded-lg object-cover shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg object-cover"
             />
           </motion.div>
           <motion.div
@@ -191,7 +191,7 @@ function Artwork() {
               alt="Artwork 2"
               width={500}
               height={700}
-              className="rounded-lg object-cover shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="rounded-lg object-cover"
             />
           </motion.div>
         </motion.div>

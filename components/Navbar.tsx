@@ -15,7 +15,7 @@ function Navbar() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 bg-[#E8E8E6]/80 backdrop-blur-sm"
       >
-        <div className="flex justify-between items-center max-w-5xl mx-auto ">
+        <div className="flex justify-between items-center max-w-5xl mx-auto lg:px-8">
           {/* Logo - Optional */}
           <div className="w-12 scale-75 xs:scale-100 ml-2 xs:ml-4">
             <SignatureAnimation/>

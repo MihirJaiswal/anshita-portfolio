@@ -4,6 +4,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
 import KonamiCode from "@/components/KonamiCode";
+import PaperTexture from "@/components/PaperTexture";
+import DoodleCanvas from "@/components/DoodleCanvas";
 
 const alumniSans = Alumni_Sans({
   subsets: ["latin"],
@@ -44,10 +46,12 @@ export default function RootLayout({
       <body
         className={`${alumniSans.variable} ${splash.variable} ${poppins.variable} antialiased`}
       >
+        <PaperTexture />
         <SmoothScroll>
           <ScrollProgress />
           {children}
           <KonamiCode />
+          <DoodleCanvas />
         </SmoothScroll>
       </body>
     </html>
