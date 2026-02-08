@@ -31,7 +31,10 @@ function Hero() {
         <div className="absolute bottom-40 right-10 w-48 h-48 bg-[#FFD700]/10 rounded-full blur-3xl" />
       </motion.div>
 
-      <motion.div style={{ y: textY, opacity }} className="relative z-10 flex flex-col items-center justify-center">
+      <motion.div
+        style={{ y: textY }}
+        className="relative z-10 flex flex-col items-center justify-center"
+      >
         <HeroImage />
         <LayeredText
           mainWord="PORTFOLIO"
@@ -43,6 +46,7 @@ function Hero() {
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-6 sm:mb-6.5 w-full px-6 sm:px-10 origin-center"
+          style={{ opacity }} 
         >
           <Image
             src="/assets/line.svg"
@@ -56,7 +60,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center text-2xl sm:text-3xl md:text-4xl uppercase text-gray-800 font-poppins"
+          className="text-center text-2xl sm:text-3xl md:text-4xl uppercase font-poppins"
         >
           UI/UX Designer
         </motion.h2>
@@ -64,10 +68,14 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.4 }}
-          className="text-center text-sm sm:text-lg md:text-xl mt-4 text-gray-600 max-w-88  xs:max-w-2xl font-poppins px-2"
+          className="text-center text-sm sm:text-lg md:text-xl mt-4 text-gray-600 max-w-88 xs:max-w-2xl font-poppins px-2"
         >
-          <span className="hidden sm:block">Designing interfaces that are clear, usable, and thoughtful</span>
-          <span className="sm:hidden">Designing smooth interfaces thoughtfully</span>
+          <span className="hidden sm:block">
+            Designing interfaces that are clear, usable, and thoughtful
+          </span>
+          <span className="sm:hidden">
+            Designing smooth interfaces thoughtfully
+          </span>
         </motion.p>
       </motion.div>
     </section>

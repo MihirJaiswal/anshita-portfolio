@@ -33,16 +33,23 @@ export default function Lightbox({
 
   const handlePrev = useCallback(() => {
     setDirection(-1);
-    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-    resetZoom();
-    onNavigate(newIndex);
+    // Use setTimeout to ensure direction state updates before navigation
+    setTimeout(() => {
+      const newIndex =
+        currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+      resetZoom();
+      onNavigate(newIndex);
+    }, 0);
   }, [currentIndex, images.length, onNavigate, resetZoom]);
 
   const handleNext = useCallback(() => {
     setDirection(1);
-    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-    resetZoom();
-    onNavigate(newIndex);
+    setTimeout(() => {
+      const newIndex =
+        currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+      resetZoom();
+      onNavigate(newIndex);
+    }, 0);
   }, [currentIndex, images.length, onNavigate, resetZoom]);
 
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 0.5, 4));
@@ -241,7 +248,8 @@ export default function Lightbox({
                   style={{
                     transform: `translate(${position.x}px, ${position.y}px) scale(${zoom})`,
                     transition: isDragging ? "none" : "transform 0.2s ease-out",
-                    cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default",
+                    cursor:
+                      zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default",
                   }}
                 >
                   <Image
@@ -258,11 +266,6 @@ export default function Lightbox({
               </motion.div>
             </AnimatePresence>
           </motion.div>
-
-          {/* Instructions */}
-          <div className="absolute bottom-4 right-4 z-50 text-white/40 text-xs hidden md:block">
-            Arrow keys to navigate • +/- to zoom • ESC to close • Drag to pan
-          </div>
         </motion.div>
       )}
     </AnimatePresence>

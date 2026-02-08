@@ -48,7 +48,7 @@ const LayeredText: React.FC<LayeredTextProps> = ({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: animationDelay + 0.4 }}
         className={cn(
-          "absolute inset-0 flex items-center justify-center pt-4 font-['splash']",
+          "absolute inset-0 flex items-center justify-center pt-2 xs:pt-4 font-['splash']",
           "text-5xl sm:text-7xl md:text-8xl lg:text-9xl",
           insideColor,
           insideClassName,

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SignatureAnimation = () => {
@@ -128,9 +128,12 @@ const SignatureAnimation = () => {
             opacity: isSignatureDone ? 1 : 0,
           }}
           transition={{
-            duration: 1
+            duration: 1,
           }}
-          className="absolute top-[-37%] right-[5%]"
+          className={`absolute top-[-37%] right-[5%] pointer-events-none select-none 
+  ${
+    clickCount >= 5 ? "text-red-500" : "text-black group-hover:text-[#A5C9D1]"
+  }`}
         >
           <span className="text-xl">.</span>
         </motion.div>
