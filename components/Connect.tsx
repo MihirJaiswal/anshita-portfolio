@@ -168,7 +168,7 @@ function Connect() {
                 className="drop-shadow-lg"
               />
               {/* Tooltip */}
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs font-poppins rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 border-2 border-[#A5C9D1] text-xs font-poppins rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                 {link.username}
               </span>
             </motion.a>
