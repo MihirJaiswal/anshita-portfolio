@@ -261,7 +261,7 @@ export default function DoodleCanvas() {
           ease: "easeIn",
         }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-[#E8E8E6] shadow-lg border-2 border-black/10 flex items-center justify-center hover:scale-110 transition-transform"
+        className="fixed bottom-5 right-2 sm:bottom-6 sm:right-6 z-40 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-[#E8E8E6] shadow-lg border-2 border-black/10 flex items-center justify-center hover:scale-110 transition-transform"
         title="Open Doodle Pad"
       >
         <Pencil className="w-4 h-4 sm:w-6 sm:h-6 text-gray-800" />
